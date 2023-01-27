@@ -2,8 +2,8 @@ import hello from '@functions/hello';
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-  service: 'lambda-functions-template',
-  frameworkVersion: '2',
+  service: 'sls-gql-template',
+  frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-offline'],
   provider: {
     name: 'aws',
@@ -19,7 +19,6 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
     },
-    lambdaHashingVersion: '20201221',
   },
   functions: { hello },
   package: { individually: true },
@@ -33,6 +32,7 @@ const serverlessConfiguration: AWS = {
       define: { 'require.resolve': undefined },
       platform: 'node',
       concurrency: 10,
+      disableIncremental: true,
     },
   },
 };
