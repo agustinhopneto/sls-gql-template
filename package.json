@@ -1,8 +1,14 @@
 {
   "name": "sls-gql-template",
   "version": "1.0.0",
-  "description": "Lambda functions template",
+  "description": "A simple template to serverless framework using TypeScript and GraphQL.",
+  "author": {
+    "name": "Agustinho Neto",
+    "email": "agustinho.pneto@gmail.com",
+    "url": "https://github.com/agustinhopneto"
+  },
   "main": "serverless.ts",
+  "license": "MIT",
   "scripts": {
     "start": "serverless offline"
   },
